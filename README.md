@@ -39,10 +39,10 @@ This will also do two important things:
 Otherwise you can just run:
 
 ```
-docker run -d -v /data:/data -p 8192:8192 xtream/polynote-docker
+docker run -d -v /data:/data -p 8192:8192 xtreamsrl/polynote-docker
 ```
 
-# ✔️ Access Polynote 
+# ✔️ Access Polynote
 
 Just go to:
 

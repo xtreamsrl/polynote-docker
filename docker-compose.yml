@@ -1,8 +1,7 @@
 version: '3'
 services:
   polynote:
-    image: xtream/polynote
-    build: .
+    image: xtreamsrl/polynote-docker
     environment:
       POLYNOTE_CONFIG: |
         listen:
