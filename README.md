@@ -9,13 +9,13 @@ We created this Docker image to allow us to experiment within the Polynote envir
 The image contains the following tools:
 
 * Python
- - pyspark
- - pandas
- - numpy
- - tensorflow
- - keras
- - matplotlib
- - plotly
+    - pyspark
+    - pandas
+    - numpy
+    - tensorflow
+    - keras
+    - matplotlib
+    - plotly
 * Scala
 * Spark
 * Polynote
