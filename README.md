@@ -1,6 +1,6 @@
 # polynote-docker by xtream
 
-[Polynote](https://github.com/polynote/polynote) is a _polyglot_ notebook environment created by the Neflix Data Science team which allows seamless interaction between Python, Scala and SQL syntax.
+[Polynote](https://github.com/polynote/polynote) is a _polyglot_ notebook environment created by the Netflix Data Science team which allows seamless interaction between Python, Scala and SQL syntax.
 
 We created this Docker image to allow us to experiment within the Polynote environment as well as with the other Data Science tool we normally use, without going through the hassle of a clean installation everytime.
 
