@@ -4,7 +4,7 @@
 
 We created this Docker image to allow us to experiment within the Polynote environment as well as with the other Data Science tool we normally use, without going through the hassle of a clean installation everytime.
 
-# Packaged Tools 📦
+# 📦 Packaged Tools
 
 The image contains the following tools:
 
@@ -20,7 +20,7 @@ The image contains the following tools:
 * Spark
 * Polynote
 
-# docker-compose 🛠
+# 🛠 docker-compose
 
 The `docker-compose.yml` file allows you to install everything with the blink of an eye through the help of the `docker-compose` tool.
 
@@ -42,7 +42,7 @@ Otherwise you can just run:
 docker run -d -v /data:/data -p 8192:8192 xtream/polynote-docker
 ```
 
-# Access Polynote ✔️
+# ✔️ Access Polynote 
 
 Just go to:
 
