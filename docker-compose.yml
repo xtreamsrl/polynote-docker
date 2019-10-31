@@ -1,0 +1,15 @@
+version: '3'
+services:
+  polynote:
+    image: xtream/polynote
+    build: .
+    environment:
+      POLYNOTE_CONFIG: |
+        listen:
+          host: 0.0.0.0
+          port: 8192
+    ports:
+      - "8192:8192"
+    volumes:
+      - /data:/data
+    container_name: polynote
