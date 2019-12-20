@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 ENV SPARK_VERSION=2.4.4
 ENV HADOOP_VERSION=2.7
 ENV SCALA_VERSION=2.11.12
-ENV POLYNOTE_VERSION=0.2.9
+ENV POLYNOTE_VERSION=0.2.14
 
 
 # Install OpenJDK
@@ -49,4 +49,4 @@ COPY config.yml ./polynote/config.yml
 
 EXPOSE 8192
 
-CMD bash polynote/polynote
+CMD ["python", "polynote/polynote.py"]

@@ -10,5 +10,5 @@ services:
     ports:
       - "8192:8192"
     volumes:
-      - /data:/data
+      - ./data:/data
     container_name: polynote
