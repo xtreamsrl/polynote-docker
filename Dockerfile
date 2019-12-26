@@ -37,6 +37,7 @@ ENV PYSPARK_ALLOW_INSECURE_GATEWAY=1
 RUN curl -Lk https://github.com/polynote/polynote/releases/download/${POLYNOTE_VERSION}/polynote-dist.tar.gz \
   | tar -xzvpf -
 
+RUN conda activate base
 RUN ln -s `which pip` ${CONDA_PREFIX}/bin/pip3
 
 RUN  rm -rf \
