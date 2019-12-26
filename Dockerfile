@@ -16,8 +16,8 @@ RUN apt-get update && apt-get install -y openjdk-8-jdk
 # Install Python and dependencies
 
 RUN pip install jep
-RUN conda install -y pyspark virtualenv keras plotly
-RUN conda install -y -c conda-forge jedi
+RUN conda install -y pyspark virtualenv keras plotly matplotlib seaborn scikit-learn scipy
+RUN conda install -y -c conda-forge jedi chartify
 RUN conda clean -y --all
 
 RUN wget https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
@@ -29,6 +29,11 @@ RUN wget https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SP
 RUN wget -O- "https://www.scala-lang.org/files/archive/scala-${SCALA_VERSION}.tgz" \
     | tar xzf - -C /usr/local --strip-components=1
 
+RUN wget -c https://www.zlib.net/fossils/zlib-1.2.9.tar.gz -O - | tar -xz  \
+&& cd zlib-1.2.9 && ./configure && make && make install \
+&& cd /lib/x86_64-linux-gnu && ln -s -f /usr/local/lib/libz.so.1.2.9/lib libz.so.1 \
+&& cd ~ && rm -rf zlib-1.2.9
+
 ENV SPARK_HOME=/opt/spark
 ENV PATH="$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin"
 ENV PYSPARK_ALLOW_INSECURE_GATEWAY=1
@@ -37,8 +42,7 @@ ENV PYSPARK_ALLOW_INSECURE_GATEWAY=1
 RUN curl -Lk https://github.com/polynote/polynote/releases/download/${POLYNOTE_VERSION}/polynote-dist.tar.gz \
   | tar -xzvpf -
 
-RUN conda activate base
-RUN ln -s `which pip` ${CONDA_PREFIX}/bin/pip3
+RUN ln -s `which pip` /opt/conda/bin/pip3
 
 RUN  rm -rf \
          /var/lib/apt/lists/* \

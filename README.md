@@ -12,10 +12,13 @@ The image contains the following tools:
     - pyspark
     - pandas
     - numpy
+    - scikit-learn
+    - scipy
     - tensorflow
     - keras
     - matplotlib
     - plotly
+    - seaborn
 * Scala
 * Spark
 * Polynote
