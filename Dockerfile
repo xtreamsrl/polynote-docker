@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 ENV SPARK_VERSION=2.4.4
 ENV HADOOP_VERSION=2.7
 ENV SCALA_VERSION=2.11.12
-ENV POLYNOTE_VERSION=0.2.14
+ENV POLYNOTE_VERSION=0.2.13
 
 
 # Install OpenJDK
@@ -31,10 +31,13 @@ RUN wget -O- "https://www.scala-lang.org/files/archive/scala-${SCALA_VERSION}.tg
 
 ENV SPARK_HOME=/opt/spark
 ENV PATH="$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin"
+ENV PYSPARK_ALLOW_INSECURE_GATEWAY=1
 
 # Download and extract polynote
 RUN curl -Lk https://github.com/polynote/polynote/releases/download/${POLYNOTE_VERSION}/polynote-dist.tar.gz \
   | tar -xzvpf -
+
+RUN ln -s `which pip` ${CONDA_PREFIX}/bin/pip3
 
 RUN  rm -rf \
          /var/lib/apt/lists/* \

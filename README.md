@@ -33,12 +33,12 @@ docker-compose up -d
 This will also do two important things:
 
 * it will map the port 8192 of the container to the port 8192 of the host
-* it will mount the `/data` folder of the host at the `/data` folder of the container to allow you to use your datasets.
+* it will mount the `./data` folder of the host at the `/data` folder of the container to allow you to use your datasets.
 
 Otherwise you can just run:
 
 ```
-docker run -d -v /data:/data -p 8192:8192 xtreamsrl/polynote-docker
+docker run -d -v ./data:/data -p 8192:8192 xtreamsrl/polynote-docker
 ```
 
 # ✔️ Access Polynote
