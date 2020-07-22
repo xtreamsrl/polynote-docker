@@ -43,7 +43,7 @@ Otherwise you can just run:
 
 ```
 docker volume create polynote-notebooks
-docker run -d -v data:/data -v polynote-notebooks:/opt/src/app/polynote/notebooks -p 8192:8192 xtreamsrl/polynote-docker
+docker run -d -v data:/data -v polynote-notebooks:/usr/src/app/polynote/notebooks -p 8192:8192 xtreamsrl/polynote-docker
 ```
 
 # ✔️ Access Polynote
