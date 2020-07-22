@@ -37,11 +37,13 @@ This will also do two important things:
 
 * it will map the port 8192 of the container to the port 8192 of the host
 * it will mount the `./data` folder of the host at the `/data` folder of the container to allow you to use your datasets.
+* it will create a docker volume to persist the notebooks you create in the docker guest
 
 Otherwise you can just run:
 
 ```
-docker run -d -v data:/data -p 8192:8192 xtreamsrl/polynote-docker
+docker volume create polynote-notebooks
+docker run -d -v data:/data -v polynote-notebooks:/opt/src/app/polynote/notebooks -p 8192:8192 xtreamsrl/polynote-docker
 ```
 
 # ✔️ Access Polynote

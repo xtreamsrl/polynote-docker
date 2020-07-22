@@ -1,4 +1,6 @@
 version: '3'
+volumes:
+  polynote-notebooks:
 services:
   polynote:
     image: xtreamsrl/polynote-docker
@@ -11,4 +13,5 @@ services:
       - "8192:8192"
     volumes:
       - ./data:/data
+      - polynote-notebooks:/usr/src/app/polynote/notebooks
     container_name: polynote
