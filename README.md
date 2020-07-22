@@ -33,7 +33,7 @@ Just clone the repository, `cd` into it, and run:
 docker-compose up -d
 ```
 
-This will also do two important things:
+This will also do three important things:
 
 * it will map the port 8192 of the container to the port 8192 of the host
 * it will mount the `./data` folder of the host at the `/data` folder of the container to allow you to use your datasets.
